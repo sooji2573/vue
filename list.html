@@ -1,0 +1,28 @@
+<html>
+    <head>
+		<title>Hello Vue!</title>
+        <link rel="stylesheet" href="index.css">
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+
+        <div id="app">
+          <ul>
+            <li v-for="name in names" v-text="name"></li>
+          </ul>
+          <input id="input" type="text" />
+          <button id="button">Add</button>
+        </div>
+
+        <script>
+          new Vue({
+            el: '#app',
+            data: {
+              names: ['kim1', 'kim2', 'kim3']
+            }
+          })
+
+          document.querySelector('#button', addEvent)
+        </script>
+    </body>
+</html>
