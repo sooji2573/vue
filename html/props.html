@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+		  <title>Vue Porps</title>
+      <link rel="stylesheet" href="index.css">
+      <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+          <h1>Vue.js component</h1>
+          <ol>
+              <todo-item
+               v-for="item in groceryList"
+               v-bind:todo="item"
+               v-bind:key="item.id">
+              </todo-item>
+          </ol>
+        </div>
+        <script>
+          Vue.component('todo-item', {
+            props: ['todo'],
+            template: '<li>{{ todo.text }}</li>'
+          })
+
+          var app_comp = new Vue({
+            el: '#app',
+            data: {
+              groceryList: [
+                { id:0, text: '햇반'},
+                { id:1, text: '라면'},
+                { id:2, text: '김밥'},
+                { id:3, text: '소고기'},
+              ]
+            }
+          })
+
+        </script>
+    </body>
+</html>
