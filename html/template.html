@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+		  <title>Vue Template</title>
+      <link rel="stylesheet" href="index.css">
+      <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="app">
+          <h1>Vue.js Template</h1>
+          <hr>
+          <h3>Javascript 1</h3>
+            <span>{{ number * 3 }}</span>
+            <br/>
+            <br/>
+            <br/>
+          <h3>Javascript 2</h3>
+            <span v-once>{{ condition ? 'True' : 'False' }}</span>
+            <br/>
+            <br/>
+            <br/>
+          <h3>Javascript 3</h3>
+            <span>{{ message.split('').reverse().join('') }}</span>
+            <br/>
+            <br/>
+            <br/>
+          <h3>Javascript 4</h3>
+            <span v-bind:id="'list-' + addId">{{ addId }}</span>
+            <br/>
+        </div>
+        <script>
+          var app = new Vue({
+            el: '#app',
+            data: {
+              number: 15,
+              condition: true,
+              message: 'hello~~~~',
+              addId: 'first'
+            }
+          })
+        </script>
+    </body>
+</html>
